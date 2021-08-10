@@ -6,6 +6,18 @@
 
 https://www.bootcss.com/p/git-guide/
 
+### 0.基本信息
+
+**配置用户信息**
+
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config --list #查看
+```
+
+
+
 ### 1.开始
 
 **创建**
@@ -13,6 +25,8 @@ https://www.bootcss.com/p/git-guide/
 ```
 git init
 git remote add origin <server>
+git remote set-url origin git://new.url.here #重新设定
+git remote remove origin #删除
 ```
 
 **检出仓库**（就不用remote了）
