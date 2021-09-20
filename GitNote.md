@@ -171,4 +171,60 @@ git diff <source_branch> <target_branch>
 git merge <branch>
 ```
 
-### 
+## 3.放弃本地修改，强制拉取更新
+
+两种：
+
+**1.restore重置**
+
+如果修改了代码但是没执行git add
+
+```
+git restore . #个别文件就写个别文件名
+```
+
+如果已经执行了git add操作，代码保存在暂存区，先取消暂存区变更
+
+```
+git restore --staged .
+或者 git reset .
+```
+
+最后
+
+```
+git pull
+```
+
+**2.stash暂存**(推荐)
+
+首先，将所有代码添加至暂存区：
+
+```
+git add .
+```
+
+然后，将代码临时保存：
+
+```
+git stash
+```
+
+此时代码会重置到修改前的状态，可以同步远程仓库区，完事儿。
+
+```
+git pull
+```
+
+同步后，如果还想继续修改原来的代码，可将临时代码恢复至工作区
+
+```
+git stash pop
+```
+
+
+
+
+
+
+
